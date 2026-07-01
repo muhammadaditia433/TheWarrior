@@ -1,0 +1,90 @@
+/* 1. Perbaikan Import Font Poppins Google Resmi */
+@import url('https://googleapis.com');
+
+/* 2. Pengaturan Reset & Paksa Font Poppins Ke Semua Elemen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #fbf8f5;
+}
+
+/* 3. Gaya Elemen Menu Navigasi (Mencegah Huruf Berubah Ukuran) */
+.navbar-nav .nav-link {
+  font-size: 16px !important;     
+  font-weight: 500 !important;    
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  white-space: nowrap !important; 
+  transition: color 0.3s ease;
+}
+
+/* Gaya dasar huruf menu saat TIDAK AKTIF (sedikit transparan elegan) */
+.text-white-opacity {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Ketika kursor diarahkan ke menu yang tidak aktif */
+.text-white-opacity:hover {
+  color: #ffffff !important;
+}
+
+/* Warna menu saat AKTIF berubah menjadi emas khas KOPIJAK */
+.text-amber-active {
+  color: #DA9F5B !important;
+  font-weight: 600 !important;
+}
+
+/* 4. Membuat Tanda Garis Bawah Modern (Active Indicator) */
+.active-indicator::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 15px;  /* Menyesuaikan jarak padding kiri nav-link */
+  right: 15px; /* Menyesuaikan jarak padding kanan nav-link */
+  height: 3px;
+  background-color: #DA9F5B;
+  border-radius: 10px;
+  animation: slideIn 0.25s ease forwards;
+}
+
+/* Animasi mikro agar garis muncul melebar lembut dari tengah */
+@keyframes slideIn {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* 5. Pengaturan Jarak Container Utama Halaman */
+.container, 
+.container-fluid {
+  padding-top: 40px !important; 
+}
+
+/* 6. Pengaturan Elemen Hero Banner Anda */
+.hero-title {
+  color: white !important;
+  font-weight: 700 !important;
+}
+
+.hero-subtitle {
+  color: white !important;
+  font-weight: 400 !important;
+}
+
+/* 7. Responsive Breakpoint Mobile */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem !important;
+  }
+}
